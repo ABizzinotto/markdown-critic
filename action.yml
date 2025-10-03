@@ -3,11 +3,11 @@ description: "Review a blog post and provide spelling and grammar corrections."
 author: "FastRuby.io"
 
 inputs:
-  openai_api_key:
+  openai-api-key:
     description: "OpenAI API key."
     required: true
 
-  github_token:
+  github-token:
     description: "GitHub token for authentication."
     required: true
 
@@ -15,5 +15,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   env:
-    OPENAI_API_KEY: ${{ inputs.openai_api_key }}
-    GITHUB_TOKEN: ${{ inputs.github_token }}
+    OPENAI_API_KEY: ${{ inputs.openai-api-key }}
+    GITHUB_TOKEN: ${{ inputs.github-token }}
