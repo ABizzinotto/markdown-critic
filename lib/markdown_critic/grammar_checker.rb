@@ -70,6 +70,8 @@ module MarkdownCritic
         - If a line contains multiple errors, provide only one corrected version of the line with all errors fixed.
         - If there are no errors, you must return an empty list.
         - Blog posts are written in American English. You must correct any British English spellings to American English.
+        - You must NOT make any changes line breaks, section distribution, or any other formatting.
+        - You must NOT make any suggestions for style, tone, or content changes.
 
         GENERAL INSTRUCTIONS:
         - Content will be provided in markdown format with a front matter section.
