@@ -79,7 +79,12 @@ module MarkdownCritic
         CRITICAL:
         - You must ONLY respond with a JSON object in the specified format below.
         - Your response must contain NO additional text or characters outside of the JSON object.
-        - You must check ONLY for spelling and grammatical errors. Do NOT provide suggestions for style, tone, or content changes.
+        - You must check ONLY for spelling and grammatical errors.
+        - Do NOT provide suggestions for style, tone, or content changes.
+        - Do NOT make any changes to formatting, punctuation, or capitalization unless it is necessary to correct a grammatical error.
+        - Do NOT change any code snippets or technical terms.
+        - Do NOT change any proper nouns, names, or titles unless they are misspelled.
+        - Do NOT make ANY suggestions that aren't to fix a clear grammatical or spelling error.
 
         ALWAYS respond in the following JSON format:
 
