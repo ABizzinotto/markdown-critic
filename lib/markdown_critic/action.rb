@@ -36,7 +36,7 @@ module MarkdownCritic
 
         content = extractor.extract_content(
           filename: added_file[:filename],
-          commit_sha: added_file[:sha]
+          commit_sha: commit_sha
         )
 
         errors = GrammarChecker.new.check(content)
