@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'octokit'
+require 'base64'
 
 module MarkdownCritic
   class ContentExtractor
