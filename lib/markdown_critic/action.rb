@@ -39,7 +39,8 @@ module MarkdownCritic
           commit_sha: commit_sha
         )
 
-        errors = GrammarChecker.new.check(content)
+        grammar_result = GrammarChecker.new.check(content)
+        errors = grammar_result[:errors] || []
         reviewer = GithubReviewer.new(
           client: @github_client,
           repository: REPOSITORY,
