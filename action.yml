@@ -11,9 +11,14 @@ inputs:
     description: "GitHub token for authentication."
     required: true
 
+  github-pr-number:
+    description: "GitHub PR number (only required for manual runs)."
+    required: false
+
 runs:
   using: "docker"
   image: "Dockerfile"
   env:
     OPENAI_API_KEY: ${{ inputs.openai-api-key }}
     GITHUB_TOKEN: ${{ inputs.github-token }}
+    GITHUB_PR_NUMBER: ${{ inputs.github-pr-number }}

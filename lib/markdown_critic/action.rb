@@ -63,10 +63,19 @@ module MarkdownCritic
     private
 
     def parse_pr_info
-      event_data = JSON.parse(File.read(ENV['GITHUB_EVENT_PATH']))
-      pr_number = event_data.dig('pull_request', 'number')
-      commit_sha = event_data.dig('pull_request', 'head', 'sha')
-      [pr_number, commit_sha]
+      manual_pr_number = ENV['GITHUB_PR_NUMBER']
+
+      if manual_pr_number && !manual_pr_number.empty?
+        pr_number = manual_pr_number.to_i
+        pr_data = @github_client.pull_request(REPOSITORY, pr_number)
+        commit_sha = pr_data.head.sha
+        [pr_number, commit_sha]
+      else
+        event_data = JSON.parse(File.read(ENV['GITHUB_EVENT_PATH']))
+        pr_number = event_data.dig('pull_request', 'number')
+        commit_sha = event_data.dig('pull_request', 'head', 'sha')
+        [pr_number, commit_sha]
+      end
     end
   end
 end
